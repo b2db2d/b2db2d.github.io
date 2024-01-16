@@ -10,6 +10,8 @@ import Foundation
 @Observable
 class ModelData{
     var creatures: [Creature] = load("b2dData.json")
+    // not sure if here is right 
+    var inputTime:Int = 0
 }
 
 

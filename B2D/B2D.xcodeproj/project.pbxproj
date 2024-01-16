@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E7B5BA42B5622E700CD4890 /* _03Mainview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B5BA32B5622E700CD4890 /* _03Mainview.swift */; };
 		8EC9B2B42B5557C100487461 /* _01TimesSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC9B2B32B5557C100487461 /* _01TimesSelectView.swift */; };
 		8EC9B2B52B555C0200487461 /* b2dData.json in Resources */ = {isa = PBXBuildFile; fileRef = 8ED4923D2B55253800234453 /* b2dData.json */; };
 		8ED492122B53DA1D00234453 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 8ED492112B53DA1D00234453 /* RealityKitContent */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E7B5BA32B5622E700CD4890 /* _03Mainview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _03Mainview.swift; sourceTree = "<group>"; };
 		8EC9B2B32B5557C100487461 /* _01TimesSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _01TimesSelectView.swift; sourceTree = "<group>"; };
 		8ED4920C2B53DA1D00234453 /* B2D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = B2D.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ED492102B53DA1D00234453 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				8ED492152B53DA1D00234453 /* _00ContentView.swift */,
 				8EC9B2B32B5557C100487461 /* _01TimesSelectView.swift */,
 				8ED4923B2B55177A00234453 /* _02CreatureListView.swift */,
+				8E7B5BA32B5622E700CD4890 /* _03Mainview.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				8ED492162B53DA1D00234453 /* _00ContentView.swift in Sources */,
 				8ED4923C2B55177A00234453 /* _02CreatureListView.swift in Sources */,
 				8ED4923A2B5513FC00234453 /* CreatureList.swift in Sources */,
+				8E7B5BA42B5622E700CD4890 /* _03Mainview.swift in Sources */,
 				8ED492362B55120C00234453 /* ModeleData.swift in Sources */,
 				8ED492382B55132E00234453 /* Creature.swift in Sources */,
 				8ED492142B53DA1D00234453 /* B2DApp.swift in Sources */,

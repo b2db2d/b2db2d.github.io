@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct CreatureListView: View {
-    //var inputHour:Int
-    @State private var modelData = ModelData()
-    //@Environment(ModelData.self) var modelData
+    @State var modelData = ModelData()
     
     var creatures:[Creature]{ModelData().creatures}
     @State var eggIndex:Int = 0
