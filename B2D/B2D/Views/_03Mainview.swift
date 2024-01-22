@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Mainview: View {
     var body: some View {
-        Text("your time")
+        Text("test")
         // ToDo timer?
     }
 }
