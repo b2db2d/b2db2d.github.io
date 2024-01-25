@@ -10,55 +10,73 @@ import RealityKit
 import RealityKitContent
 
 struct ContentView: View {
-    /*
-     @State private var showImmersiveSpace = false
-     @State private var immersiveSpaceIsShown = false
-     
-     @Environment(\.openImmersiveSpace) var openImmersiveSpace
-     @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
-     */
     
     var body: some View {
+        let startDate = Date()
         
-        NavigationView{               VStack {
-            Text("Welcome Birth to Death").padding()
-            
-            NavigationLink(destination: TimesSelectView()) {
-                Text("start !")
+        
+        ZStack{
+            AnimatedBackground()
+                .blur(radius: 50)
+            TimelineView(.animation) { context in
+                NavigationView(){
+                    
+                    NavigationLink(destination: TimesSelectView()) {
+                        Image(systemName: "play")
+                            .padding(.all)
+                            .font(.system(size: 150))
+                        
+                           
+                    }.buttonStyle(PinkButtonStyle())
+//                    .distortionEffect(ShaderLibrary.simpleWave(.float(startDate.timeIntervalSinceNow)), maxSampleOffset: .zero)
+                    
+                    
+                  
+                }
+                .navigationViewStyle(StackNavigationViewStyle())
+                
+                
+                
             }
-        }}.background(Color.clear)
-            .navigationViewStyle(StackNavigationViewStyle())
-        /*Model3D(named: "Scene", bundle: realityKitContentBundle)
-         //  .padding(.bottom, 50)
-         
-         
-         Toggle("1 Day", isOn: $showImmersiveSpace)
-         .toggleStyle(.button)
-         .padding(.top, 50)
-         */
-        
-        /*
-         .onChange(of: showImmersiveSpace) { _, newValue in
-         Task {
-         if newValue {
-         switch await openImmersiveSpace(id: "ImmersiveSpace") {
-         case .opened:
-         immersiveSpaceIsShown = true
-         case .error, .userCancelled:
-         fallthrough
-         @unknown default:
-         immersiveSpaceIsShown = false
-         showImmersiveSpace = false
-         }
-         } else if immersiveSpaceIsShown {
-         await dismissImmersiveSpace()
-         immersiveSpaceIsShown = false
-         }
-         }
-         } */
+            
+        }
     }
     
 }
+
+struct PinkButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding()
+            .font(.title)
+            .foregroundColor(.white)
+            .background(configuration.isPressed ? Color.blue : Color.pink)
+            .cornerRadius(5)
+    }
+}
+
+
+//extension UIColor {
+//    
+//    convenience init(hexCode: String, alpha: CGFloat = 1.0) {
+//        var hexFormatted: String = hexCode.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
+//        
+//        if hexFormatted.hasPrefix("#") {
+//            hexFormatted = String(hexFormatted.dropFirst())
+//        }
+//        
+//        assert(hexFormatted.count == 6, "Invalid hex code used.")
+//        
+//        var rgbValue: UInt64 = 0
+//        Scanner(string: hexFormatted).scanHexInt64(&rgbValue)
+//        
+//        self.init(red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+//                  green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+//                  blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+//                  alpha: alpha)
+//    }
+//}
+
 #Preview(windowStyle: .automatic) {
     ContentView()
 }

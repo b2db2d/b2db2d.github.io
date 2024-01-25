@@ -21,6 +21,8 @@
 		8ED492382B55132E00234453 /* Creature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED492372B55132E00234453 /* Creature.swift */; };
 		8ED4923A2B5513FC00234453 /* CreatureList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED492392B5513FC00234453 /* CreatureList.swift */; };
 		8ED4923C2B55177A00234453 /* _02CreatureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4923B2B55177A00234453 /* _02CreatureListView.swift */; };
+		FA5F211E2B5FF1AA00209FC9 /* shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = FA5F211D2B5FF1AA00209FC9 /* shader.metal */; };
+		FA5F21202B6001AF00209FC9 /* backgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F211F2B6001AF00209FC9 /* backgroundColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		8ED492392B5513FC00234453 /* CreatureList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureList.swift; sourceTree = "<group>"; };
 		8ED4923B2B55177A00234453 /* _02CreatureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = _02CreatureListView.swift; path = B2D/ModelData/_02CreatureListView.swift; sourceTree = SOURCE_ROOT; };
 		8ED4923D2B55253800234453 /* b2dData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = b2dData.json; sourceTree = "<group>"; };
+		FA5F211D2B5FF1AA00209FC9 /* shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = shader.metal; sourceTree = "<group>"; };
+		FA5F211F2B6001AF00209FC9 /* backgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backgroundColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				8ED4921E2B53DA1E00234453 /* Info.plist */,
 				8ED4923D2B55253800234453 /* b2dData.json */,
 				8ED4921B2B53DA1E00234453 /* Preview Content */,
+				FA5F211D2B5FF1AA00209FC9 /* shader.metal */,
+				FA5F211F2B6001AF00209FC9 /* backgroundColor.swift */,
 			);
 			path = B2D;
 			sourceTree = "<group>";
@@ -259,7 +265,9 @@
 				8ED4923C2B55177A00234453 /* _02CreatureListView.swift in Sources */,
 				8ED4923A2B5513FC00234453 /* CreatureList.swift in Sources */,
 				8E7B5BA42B5622E700CD4890 /* _03Mainview.swift in Sources */,
+				FA5F211E2B5FF1AA00209FC9 /* shader.metal in Sources */,
 				8ED492362B55120C00234453 /* ModeleData.swift in Sources */,
+				FA5F21202B6001AF00209FC9 /* backgroundColor.swift in Sources */,
 				8ED492382B55132E00234453 /* Creature.swift in Sources */,
 				8ED492142B53DA1D00234453 /* B2DApp.swift in Sources */,
 				8EC9B2B42B5557C100487461 /* _01TimesSelectView.swift in Sources */,
