@@ -153,6 +153,8 @@
 				8ED4921E2B53DA1E00234453 /* Info.plist */,
 				8ED4923D2B55253800234453 /* b2dData.json */,
 				8ED4921B2B53DA1E00234453 /* Preview Content */,
+				FA5F211D2B5FF1AA00209FC9 /* shader.metal */,
+				FA5F211F2B6001AF00209FC9 /* backgroundColor.swift */,
 			);
 			path = B2D;
 			sourceTree = "<group>";
