@@ -426,6 +426,14 @@
     "objectMetadataList" : [
       [
         "D66134B1-3681-4A8E-AFE5-29F257229F3B",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "D66134B1-3681-4A8E-AFE5-29F257229F3B",
         "Root",
         "material"
       ],
@@ -447,6 +455,19 @@
         "Root",
         "GridMaterial",
         "GridMaterial"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
+  "EBD616B2-0DD4-448C-9C11-1B691F68E696" : {
+    "objectMetadataList" : [
+      [
+        "EBD616B2-0DD4-448C-9C11-1B691F68E696",
+        "Root",
+        "cloud"
       ],
       {
         "isExpanded" : true,
@@ -553,6 +574,16 @@
       [
         "EBD616B2-0DD4-448C-9C11-1B691F68E696",
         "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "EBD616B2-0DD4-448C-9C11-1B691F68E696",
+        "Root",
+        "cloud",
+        "Geom"
       ],
       {
         "isExpanded" : true,
