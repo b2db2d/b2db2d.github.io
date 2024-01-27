@@ -636,6 +636,16 @@
       {
         "isExpanded" : true,
         "isLocked" : false
+      },
+      [
+        "EBD616B2-0DD4-448C-9C11-1B691F68E696",
+        "Root",
+        "cloud",
+        "Geom"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
       }
     ]
   },
