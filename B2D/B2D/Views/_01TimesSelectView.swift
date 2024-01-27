@@ -31,7 +31,7 @@ struct TimesSelectView: View {
                             ModelData().inputTime = 501
                             self.nextUI = true
                         }) {
-                            Text("3 nextUI")
+                            Text("1 month")
                         }
                     }
                 }

@@ -1,16 +1,17 @@
 import SwiftUI
 
 struct ColorView: View {
+    @State private var mainViewHasAppeared = false
     var body: some View {
-        AnimatedBackground().edgesIgnoringSafeArea(.all)
+        AnimatedBackground(shouldDisable: $mainViewHasAppeared).edgesIgnoringSafeArea(.all)
             .blur(radius: 60)
-            
-            
-            
+
     }
 }
 
 struct AnimatedBackground: View {
+    @Binding var shouldDisable: Bool
+    
     @State var start = UnitPoint(x: 5, y: 0.1)
     @State var end = UnitPoint(x: 1, y: -5)
 //    @State var opacity = 0.1
@@ -25,27 +26,30 @@ struct AnimatedBackground: View {
     
     var body: some View {
         
-        LinearGradient(gradient: Gradient(colors: colors), startPoint: end, endPoint: start)
-            .scaleEffect(isZoomed ? 2 : 1)
-            .animation(.elasticEaseInEaseOut(duration: duration), value: isZoomed)
-        
-        LinearGradient(gradient: Gradient(colors: colors), startPoint: start, endPoint: end)
-            .scaleEffect(isZoomed ? 2 : 1)
-            .opacity(opacity)
-            .animation(.elasticEaseInEaseOut(duration: duration), value: isZoomed)
-            .onReceive(timer, perform: { _ in
-                withAnimation{
-                    self.start = UnitPoint(x: randomDouble, y: randomDouble)
-                    self.end = UnitPoint(x: Double.random(in: 0...1), y: Double.random(in: 0...1))
-                    self.opacity = Double.random(in: 0.7...1)
-//                    self.opacity = self.opacity == 1.0 ? 0.0 : 1.0
-                    let time = Date().timeIntervalSince1970
-                    self.duration = log(time - floor(time) + 1)
-                    self.location = Double.random(in: 0...1)
-                    
-                    
-                }
-            })
+        VStack{
+            LinearGradient(gradient: Gradient(colors: colors), startPoint: end, endPoint: start)
+                .scaleEffect(isZoomed ? 2 : 1)
+                .animation(.elasticEaseInEaseOut(duration: duration), value: isZoomed)
+            
+            LinearGradient(gradient: Gradient(colors: colors), startPoint: start, endPoint: end)
+                .scaleEffect(isZoomed ? 2 : 1)
+                .opacity(opacity)
+                .animation(.elasticEaseInEaseOut(duration: duration), value: isZoomed)
+                .onReceive(timer, perform: { _ in
+                    withAnimation{
+                        self.start = UnitPoint(x: randomDouble, y: randomDouble)
+                        self.end = UnitPoint(x: Double.random(in: 0...1), y: Double.random(in: 0...1))
+                        self.opacity = Double.random(in: 0.7...1)
+                        //                    self.opacity = self.opacity == 1.0 ? 0.0 : 1.0
+                        let time = Date().timeIntervalSince1970
+                        self.duration = log(time - floor(time) + 1)
+                        self.location = Double.random(in: 0...1)
+                        
+                        
+                    }
+                })
+        }
+        .disabled(shouldDisable)
             
     }
 }
