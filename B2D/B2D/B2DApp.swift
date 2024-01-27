@@ -16,7 +16,7 @@ struct B2DApp: App {
         }
 
         ImmersiveSpace(id: "ImmersiveSpace") {
-            ImmersiveView().environment(modelData)
+            MainView().environment(modelData)
         }
     }
 }
