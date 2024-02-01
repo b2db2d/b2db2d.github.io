@@ -5,14 +5,21 @@ struct CreatureListView: View {
     var creatures:[Creature]{ModelData().creatures}
     @State var eggIndex:Int = 0
     var maxIndex:Int {ModelData().creatures.count-1}
-    @State var showMainView = false
+    
+    
+ 
     @State private var mainViewHasAppeared = false
+    
+    @Environment(ViewModel.self) private var model
+
+    @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.openWindow) private var openWindow
+    @Environment(\.dismissWindow) private var dismissWindow
+
 
 
     var body: some View {
-        if showMainView {
-            MainView()
-        } else {
+        @Bindable var model = model
             ZStack{
                 if !mainViewHasAppeared {
                     AnimatedBackground(shouldDisable: $mainViewHasAppeared)
@@ -27,7 +34,7 @@ struct CreatureListView: View {
                                 eggIndex = maxIndex
                             }
                         }label: {
-                            Text("<")
+                            Image(systemName: "chevron.left")
                         }
                         creatures[eggIndex].image.resizable().frame(width:60, height: 80)
                             .shadow(radius: 7)
@@ -38,22 +45,27 @@ struct CreatureListView: View {
                                 eggIndex = 0
                             }
                         }label: {
-                            Text(">")
+                            Image(systemName: "chevron.right")
                         }
                     }
-                    Button(action: {
-                        
-                        showMainView = true
-                        mainViewHasAppeared = true
-                    }) {
-                        Text("Select")
-                    }
+                    
+                    MonsterToggle()
+                }
+            }
+            .animation(.default, value: model.isShowingUs)
+        
+        // Close any open detail view when returning to the table of contents.
+        .onChange(of: model.navigationPath) { _, path in
+            if path.isEmpty {
+                if model.isShowingView {
+                    dismissWindow(id: "views")
                 }
             }
         }
+        
     }
 }
 
-#Preview {
-    CreatureListView()
-}
+//#Preview {
+//    CreatureListView()
+//}

@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8E7B5BA42B5622E700CD4890 /* _03Mainview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B5BA32B5622E700CD4890 /* _03Mainview.swift */; };
 		8EC9B2B42B5557C100487461 /* _01TimesSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC9B2B32B5557C100487461 /* _01TimesSelectView.swift */; };
 		8EC9B2B52B555C0200487461 /* b2dData.json in Resources */ = {isa = PBXBuildFile; fileRef = 8ED4923D2B55253800234453 /* b2dData.json */; };
 		8ED492122B53DA1D00234453 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 8ED492112B53DA1D00234453 /* RealityKitContent */; };
 		8ED492142B53DA1D00234453 /* B2DApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED492132B53DA1D00234453 /* B2DApp.swift */; };
-		8ED492162B53DA1D00234453 /* _00ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED492152B53DA1D00234453 /* _00ContentView.swift */; };
 		8ED4921A2B53DA1E00234453 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ED492192B53DA1E00234453 /* Assets.xcassets */; };
 		8ED4921D2B53DA1E00234453 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ED4921C2B53DA1E00234453 /* Preview Assets.xcassets */; };
 		8ED492282B53DA1E00234453 /* B2DTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED492272B53DA1E00234453 /* B2DTests.swift */; };
@@ -25,7 +23,25 @@
 		FA1833582B656014009FDA30 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1833572B656014009FDA30 /* Button.swift */; };
 		FA5F211E2B5FF1AA00209FC9 /* shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = FA5F211D2B5FF1AA00209FC9 /* shader.metal */; };
 		FA5F21202B6001AF00209FC9 /* AnimatedBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F211F2B6001AF00209FC9 /* AnimatedBackground.swift */; };
-		FAEE7EF72B626ADA00F6A279 /* _04PublishedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE7EF62B626ADA00F6A279 /* _04PublishedView.swift */; };
+		FAD0C4A62B67729C0052502C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0C4A52B67729C0052502C /* ViewModel.swift */; };
+		FAD0C4A92B6773140052502C /* ShadowEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0C4A82B6773140052502C /* ShadowEntity.swift */; };
+		FAD0C4AD2B6775460052502C /* Entity+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0C4AC2B6775460052502C /* Entity+Configuration.swift */; };
+		FAD0C4B62B677D7D0052502C /* MonsterControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0C4B52B677D7D0052502C /* MonsterControls.swift */; };
+		FAD0C4B92B677F1A0052502C /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0C4B82B677F1A0052502C /* Shadow.swift */; };
+		FAD0C4BB2B6784970052502C /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0C4BA2B6784970052502C /* Monster.swift */; };
+		FAD0C4C32B67A5DF0052502C /* Modules.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0C4C22B67A5DF0052502C /* Modules.swift */; };
+		FAD0C4C52B67A6040052502C /* TableOfContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0C4C42B67A6040052502C /* TableOfContents.swift */; };
+		FAD0C4C82B67A6470052502C /* ModuleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0C4C62B67A6470052502C /* ModuleDetail.swift */; };
+		FAD0C4C92B67A6470052502C /* ModuleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0C4C72B67A6470052502C /* ModuleCard.swift */; };
+		FAD0C4CB2B67A6B90052502C /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0C4CA2B67A6B90052502C /* Module.swift */; };
+		FAD0C4CD2B67A74B0052502C /* OurStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0C4CC2B67A74B0052502C /* OurStory.swift */; };
+		FAD0C4CF2B67A8630052502C /* AboutUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0C4CE2B67A8630052502C /* AboutUs.swift */; };
+		FAD0C4D12B67A9500052502C /* MonsterToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0C4D02B67A9500052502C /* MonsterToggle.swift */; };
+		FAD0C4D32B67AA0D0052502C /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0C4D22B67AA0D0052502C /* SettingsButton.swift */; };
+		FAD0C4D52B67AE130052502C /* MonsterModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0C4D42B67AE130052502C /* MonsterModule.swift */; };
+		FAD0C4D72B67AF3F0052502C /* AboutUsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0C4D62B67AF3F0052502C /* AboutUsModule.swift */; };
+		FAD0C4DD2B67B4D40052502C /* TypeTextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0C4DC2B67B4D40052502C /* TypeTextModifier.swift */; };
+		FAD0C4DF2B6956C80052502C /* FadeInTextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0C4DE2B6956C80052502C /* FadeInTextModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,12 +55,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8E7B5BA32B5622E700CD4890 /* _03Mainview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _03Mainview.swift; sourceTree = "<group>"; };
 		8EC9B2B32B5557C100487461 /* _01TimesSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _01TimesSelectView.swift; sourceTree = "<group>"; };
 		8ED4920C2B53DA1D00234453 /* B2D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = B2D.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ED492102B53DA1D00234453 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		8ED492132B53DA1D00234453 /* B2DApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = B2DApp.swift; sourceTree = "<group>"; };
-		8ED492152B53DA1D00234453 /* _00ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _00ContentView.swift; sourceTree = "<group>"; };
 		8ED492192B53DA1E00234453 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8ED4921C2B53DA1E00234453 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8ED4921E2B53DA1E00234453 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,7 +74,26 @@
 		FA1833572B656014009FDA30 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		FA5F211D2B5FF1AA00209FC9 /* shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = shader.metal; sourceTree = "<group>"; };
 		FA5F211F2B6001AF00209FC9 /* AnimatedBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedBackground.swift; sourceTree = "<group>"; };
-		FAEE7EF62B626ADA00F6A279 /* _04PublishedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _04PublishedView.swift; sourceTree = "<group>"; };
+		FAD0C4A52B67729C0052502C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		FAD0C4A82B6773140052502C /* ShadowEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowEntity.swift; sourceTree = "<group>"; };
+		FAD0C4AB2B67749B0052502C /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		FAD0C4AC2B6775460052502C /* Entity+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entity+Configuration.swift"; sourceTree = "<group>"; };
+		FAD0C4B52B677D7D0052502C /* MonsterControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterControls.swift; sourceTree = "<group>"; };
+		FAD0C4B82B677F1A0052502C /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
+		FAD0C4BA2B6784970052502C /* Monster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
+		FAD0C4C22B67A5DF0052502C /* Modules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modules.swift; sourceTree = "<group>"; };
+		FAD0C4C42B67A6040052502C /* TableOfContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOfContents.swift; sourceTree = "<group>"; };
+		FAD0C4C62B67A6470052502C /* ModuleDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleDetail.swift; sourceTree = "<group>"; };
+		FAD0C4C72B67A6470052502C /* ModuleCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleCard.swift; sourceTree = "<group>"; };
+		FAD0C4CA2B67A6B90052502C /* Module.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
+		FAD0C4CC2B67A74B0052502C /* OurStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OurStory.swift; sourceTree = "<group>"; };
+		FAD0C4CE2B67A8630052502C /* AboutUs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUs.swift; sourceTree = "<group>"; };
+		FAD0C4D02B67A9500052502C /* MonsterToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterToggle.swift; sourceTree = "<group>"; };
+		FAD0C4D22B67AA0D0052502C /* SettingsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
+		FAD0C4D42B67AE130052502C /* MonsterModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterModule.swift; sourceTree = "<group>"; };
+		FAD0C4D62B67AF3F0052502C /* AboutUsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsModule.swift; sourceTree = "<group>"; };
+		FAD0C4DC2B67B4D40052502C /* TypeTextModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeTextModifier.swift; sourceTree = "<group>"; };
+		FAD0C4DE2B6956C80052502C /* FadeInTextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeInTextModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +120,7 @@
 			children = (
 				8ED4920E2B53DA1D00234453 /* B2D */,
 				8ED4920F2B53DA1D00234453 /* Packages */,
+				FAD0C4AA2B6774590052502C /* Configuration */,
 				8ED492262B53DA1E00234453 /* B2DTests */,
 				8ED4920D2B53DA1D00234453 /* Products */,
 			);
@@ -105,8 +139,14 @@
 			isa = PBXGroup;
 			children = (
 				8ED492132B53DA1D00234453 /* B2DApp.swift */,
+				FAD0C4C12B67A5D00052502C /* Modules */,
+				FAD0C4B72B677F060052502C /* RealityViews */,
+				FAD0C4B42B677D4F0052502C /* Monster */,
+				FAD0C4B32B677CCD0052502C /* Settings */,
+				FAD0C4A72B6772E50052502C /* Entities */,
+				FAD0C4A42B67726B0052502C /* Model */,
 				8ED492342B5511BF00234453 /* ModelData */,
-				8ED492332B53F38200234453 /* Views */,
+				8ED492332B53F38200234453 /* 2D_UI */,
 				FA1833562B655FFF009FDA30 /* Style */,
 				FA1833552B655DAE009FDA30 /* Testfiles */,
 				8ED492192B53DA1E00234453 /* Assets.xcassets */,
@@ -141,16 +181,13 @@
 			path = B2DTests;
 			sourceTree = "<group>";
 		};
-		8ED492332B53F38200234453 /* Views */ = {
+		8ED492332B53F38200234453 /* 2D_UI */ = {
 			isa = PBXGroup;
 			children = (
-				8ED492152B53DA1D00234453 /* _00ContentView.swift */,
 				8EC9B2B32B5557C100487461 /* _01TimesSelectView.swift */,
 				8ED4923B2B55177A00234453 /* _02CreatureListView.swift */,
-				8E7B5BA32B5622E700CD4890 /* _03Mainview.swift */,
-				FAEE7EF62B626ADA00F6A279 /* _04PublishedView.swift */,
 			);
-			path = Views;
+			path = 2D_UI;
 			sourceTree = "<group>";
 		};
 		8ED492342B5511BF00234453 /* ModelData */ = {
@@ -175,11 +212,80 @@
 		FA1833562B655FFF009FDA30 /* Style */ = {
 			isa = PBXGroup;
 			children = (
+				FAD0C4DC2B67B4D40052502C /* TypeTextModifier.swift */,
 				FA5F211D2B5FF1AA00209FC9 /* shader.metal */,
 				FA5F211F2B6001AF00209FC9 /* AnimatedBackground.swift */,
 				FA1833572B656014009FDA30 /* Button.swift */,
+				FAD0C4DE2B6956C80052502C /* FadeInTextModifier.swift */,
 			);
 			path = Style;
+			sourceTree = "<group>";
+		};
+		FAD0C4A42B67726B0052502C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FAD0C4CA2B67A6B90052502C /* Module.swift */,
+				FAD0C4A52B67729C0052502C /* ViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FAD0C4A72B6772E50052502C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FAD0C4A82B6773140052502C /* ShadowEntity.swift */,
+				FAD0C4AC2B6775460052502C /* Entity+Configuration.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		FAD0C4AA2B6774590052502C /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				FAD0C4AB2B67749B0052502C /* Config.xcconfig */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		FAD0C4B32B677CCD0052502C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FAD0C4D22B67AA0D0052502C /* SettingsButton.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		FAD0C4B42B677D4F0052502C /* Monster */ = {
+			isa = PBXGroup;
+			children = (
+				FAD0C4B52B677D7D0052502C /* MonsterControls.swift */,
+				FAD0C4BA2B6784970052502C /* Monster.swift */,
+			);
+			path = Monster;
+			sourceTree = "<group>";
+		};
+		FAD0C4B72B677F060052502C /* RealityViews */ = {
+			isa = PBXGroup;
+			children = (
+				FAD0C4B82B677F1A0052502C /* Shadow.swift */,
+			);
+			path = RealityViews;
+			sourceTree = "<group>";
+		};
+		FAD0C4C12B67A5D00052502C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				FAD0C4D62B67AF3F0052502C /* AboutUsModule.swift */,
+				FAD0C4D42B67AE130052502C /* MonsterModule.swift */,
+				FAD0C4D02B67A9500052502C /* MonsterToggle.swift */,
+				FAD0C4CE2B67A8630052502C /* AboutUs.swift */,
+				FAD0C4CC2B67A74B0052502C /* OurStory.swift */,
+				FAD0C4C72B67A6470052502C /* ModuleCard.swift */,
+				FAD0C4C62B67A6470052502C /* ModuleDetail.swift */,
+				FAD0C4C22B67A5DF0052502C /* Modules.swift */,
+				FAD0C4C42B67A6040052502C /* TableOfContents.swift */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,20 +392,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8ED492162B53DA1D00234453 /* _00ContentView.swift in Sources */,
+				FAD0C4B62B677D7D0052502C /* MonsterControls.swift in Sources */,
+				FAD0C4CD2B67A74B0052502C /* OurStory.swift in Sources */,
 				8ED4923C2B55177A00234453 /* _02CreatureListView.swift in Sources */,
+				FAD0C4C92B67A6470052502C /* ModuleCard.swift in Sources */,
 				8ED4923A2B5513FC00234453 /* CreatureList.swift in Sources */,
-				FAEE7EF72B626ADA00F6A279 /* _04PublishedView.swift in Sources */,
+				FAD0C4C32B67A5DF0052502C /* Modules.swift in Sources */,
 				FA18334C2B64F2C3009FDA30 /* AnimationTest.swift in Sources */,
-				8E7B5BA42B5622E700CD4890 /* _03Mainview.swift in Sources */,
+				FAD0C4CB2B67A6B90052502C /* Module.swift in Sources */,
+				FAD0C4CF2B67A8630052502C /* AboutUs.swift in Sources */,
+				FAD0C4D72B67AF3F0052502C /* AboutUsModule.swift in Sources */,
+				FAD0C4AD2B6775460052502C /* Entity+Configuration.swift in Sources */,
 				FA5F211E2B5FF1AA00209FC9 /* shader.metal in Sources */,
+				FAD0C4C82B67A6470052502C /* ModuleDetail.swift in Sources */,
+				FAD0C4D32B67AA0D0052502C /* SettingsButton.swift in Sources */,
 				FA1833582B656014009FDA30 /* Button.swift in Sources */,
+				FAD0C4B92B677F1A0052502C /* Shadow.swift in Sources */,
 				8ED492362B55120C00234453 /* ModelData.swift in Sources */,
 				FA5F21202B6001AF00209FC9 /* AnimatedBackground.swift in Sources */,
+				FAD0C4A62B67729C0052502C /* ViewModel.swift in Sources */,
 				FA1833542B655B96009FDA30 /* ModelView.swift in Sources */,
 				8ED492382B55132E00234453 /* Creature.swift in Sources */,
+				FAD0C4C52B67A6040052502C /* TableOfContents.swift in Sources */,
+				FAD0C4BB2B6784970052502C /* Monster.swift in Sources */,
+				FAD0C4DD2B67B4D40052502C /* TypeTextModifier.swift in Sources */,
+				FAD0C4A92B6773140052502C /* ShadowEntity.swift in Sources */,
 				8ED492142B53DA1D00234453 /* B2DApp.swift in Sources */,
+				FAD0C4D52B67AE130052502C /* MonsterModule.swift in Sources */,
 				8EC9B2B42B5557C100487461 /* _01TimesSelectView.swift in Sources */,
+				FAD0C4D12B67A9500052502C /* MonsterToggle.swift in Sources */,
+				FAD0C4DF2B6956C80052502C /* FadeInTextModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

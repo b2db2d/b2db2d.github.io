@@ -1,0 +1,75 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 1.0 (409.60.6)"
+    }
+    defaultPrim = "material"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "material"
+{
+    quatf xformOp:orient = (1, 0, 0, 0)
+    float3 xformOp:scale = (1, 1, 1)
+    float3 xformOp:translate = (0, 0, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+    def "_materials"
+    {
+        def Material "Material_002"
+        {
+            token inputs:frame:stPrimvarName = "st"
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </material/_materials/Material_002/Principled_BSDF.outputs:surface>
+
+            def Shader "Principled_BSDF"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                float inputs:clearcoat = 0.7924528
+                float inputs:clearcoatRoughness = 0
+                color3f inputs:diffuseColor.connect = </material/_materials/Material_002/diffuseColor.outputs:rgb>
+                color3f inputs:emissiveColor = (0, 0, 0.06271989)
+                float inputs:ior = 25.849998
+                float inputs:metallic = 0
+                float inputs:opacity = 1
+                float inputs:roughness = 0
+                float inputs:specular = 1
+                token outputs:surface
+            }
+
+            def Shader "Image_Texture"
+            {
+                uniform token info:id = "UsdUVTexture"
+                asset inputs:file = @./textures/toppng.com-fractal-glow-bright-texture-abstraction-3840x2400.jpg@
+                token inputs:sourceColorSpace = "sRGB"
+                float2 inputs:st.connect = </material/_materials/Material_002/uvmap.outputs:result>
+                float3 outputs:rgb
+            }
+
+            def Shader "uvmap"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname = "UVMap"
+                float2 outputs:result
+            }
+
+            def Shader "diffuseColor"
+            {
+                uniform token info:id = "UsdUVTexture"
+                asset inputs:file = @toppng.com-fractal-glow-bright-texture-abstraction-3840x2400.jpg@
+                float2 inputs:st.connect = </material/_materials/Material_002/diffuseColor/TexCoordReader.outputs:result>
+                color3f outputs:rgb
+
+                def Shader "TexCoordReader"
+                {
+                    uniform token info:id = "UsdPrimvarReader_float2"
+                    token inputs:varname.connect = </material/_materials/Material_002/Principled_BSDF.inputs:frame:stPrimvarName>
+                    float2 outputs:result
+                }
+            }
+        }
+    }
+}
+
