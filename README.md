@@ -1,4 +1,6 @@
-# 항상 주의할 점
+# For one thing, corruption does not make for efficiency.  
+
+
 
 ## 커밋전에 반드시 바뀐부분에 대한 테스트는 잊지말자
 
