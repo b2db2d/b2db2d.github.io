@@ -2,7 +2,7 @@
 import SwiftUI
 
 extension MonsterEntity {
-    /// Configuration information for Earth entities.
+    /// Configuration information for Shadow entities.
     struct Configuration {
         var scale: Float = 4.5
         var position: SIMD3<Float> = .init(x: 0.0, y: -0.2, z: 0)
