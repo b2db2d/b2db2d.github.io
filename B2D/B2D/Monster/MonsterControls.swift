@@ -2,10 +2,12 @@
 
 import SwiftUI
 
-/// Controls that people can use to manipulate the globe in a volume.
 struct MonsterControls: View {
     @Environment(ViewModel.self) private var model
     @State private var isTiltPickerVisible: Bool = false
+
+    // MonsterEntity 클래스의 인스턴스를 옵셔널로 선언
+    @State private var monsterEntity: MonsterEntity?
 
     var body: some View {
         @Bindable var model = model
@@ -18,8 +20,6 @@ struct MonsterControls: View {
                 .accessibilitySortPriority(1)
 
             HStack(spacing: 17) {
-  
-
                 Toggle(isOn: $isTiltPickerVisible) {
                     Label("Tilt", systemImage: "clock")
                 }
@@ -41,9 +41,18 @@ struct MonsterControls: View {
         // Update the date that controls the Earth's tilt.
         .onChange(of: model.monsterTilt) { _, tilt in
             model.monsterShadow.date = tilt.date
+            Task {
+                if monsterEntity == nil {
+                    monsterEntity = await MonsterEntity()
+                }
+                await monsterEntity?.change(date: tilt.date)
+            }
         }
     }
 }
+
+
+
 
 /// A custom picker for choosing a time of year.
 private struct GlobeTiltPicker: View {
@@ -98,18 +107,16 @@ extension HorizontalAlignment {
     )
 }
 
-/// A direction to tilt the earth, given as the beginning of a season.
 enum GlobeTilt: String, CaseIterable, Identifiable {
-    case none, march, june, september, december
+    case none, march, june, september
     var id: Self { self }
 
     var date: Date? {
         let month = switch self {
-        case .none: 0
+        case .none: 2
         case .march: 3
         case .june: 6
         case .september: 9
-        case .december: 12
         }
 
         if month == 0 {
@@ -125,7 +132,6 @@ enum GlobeTilt: String, CaseIterable, Identifiable {
         case .march: "March equinox"
         case .june: "June solstice"
         case .september: "September equinox"
-        case .december: "December solstice"
         }
     }
 }

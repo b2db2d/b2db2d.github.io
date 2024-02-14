@@ -1,0 +1,127 @@
+#usda 1.0
+(
+    defaultPrim = "Root"
+)
+
+def Xform "Root" (
+    active = true
+)
+{
+    def "Root" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        references = @Shadow.usdz@
+    )
+    {
+        reorder nameChildren = ["Materials", "Body_Cube_001", "mixamorig_Hips", "Material", "Transform"]
+        rel material:binding = </Root/Root/Material> (
+            bindMaterialAs = "strongerThanDescendants"
+        )
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (1.1033455, -3.3700905, -3.2546184)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "Material"
+        {
+            token outputs:mtlx:surface.connect = </Root/Root/Material/PreviewSurface.outputs:out>
+            token outputs:realitykit:vertex
+            float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (705.8001, 56.00749)
+            float2 ui:nodegraph:realitykit:subgraphOutputs:size = (181.5, 99)
+            int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 231
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+                color3f inputs:diffuseColor.connect = </Root/Root/Material/Image.outputs:out>
+                float inputs:metallic
+                float3 inputs:normal
+                float inputs:opacity
+                float inputs:opacityThreshold
+                float inputs:roughness.connect = </Root/Root/Material/Image_1.outputs:out>
+                token outputs:out
+                float2 ui:nodegraph:node:pos = (186.26715, 0.5285992)
+                float2 ui:nodegraph:node:size = (148.5, 199)
+                int ui:nodegraph:node:stackingOrder = 235
+                string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["inputs:roughness", "inputs:roughness"]
+            }
+
+            def Shader "Image"
+            {
+                uniform token info:id = "ND_image_color3"
+                color3f inputs:default
+                asset inputs:file (
+                    colorSpace = "lin_srgb"
+                )
+                asset inputs:file.connect = </Root/Root/Material/Constant.outputs:out>
+                string inputs:filtertype
+                float2 inputs:texcoord
+                string inputs:uaddressmode
+                string inputs:vaddressmode
+                color3f outputs:out
+                float2 ui:nodegraph:node:pos = (-232.9761, -153.56609)
+                float2 ui:nodegraph:node:size = (148.5, 199)
+                int ui:nodegraph:node:stackingOrder = 225
+            }
+
+            def Shader "Constant"
+            {
+                uniform token info:id = "ND_constant_filename"
+                asset inputs:value = @albedo.png@
+                asset outputs:out
+                float2 ui:nodegraph:node:pos = (-449.67773, -201.14001)
+                float2 ui:nodegraph:node:size = (142.5, 53)
+                int ui:nodegraph:node:stackingOrder = 229
+            }
+
+            def Shader "Image_1"
+            {
+                uniform token info:id = "ND_image_float"
+                asset inputs:file.connect = </Root/Root/Material/Constant_1.outputs:out>
+                string inputs:filtertype
+                string inputs:uaddressmode
+                string inputs:vaddressmode
+                float outputs:out
+                float2 ui:nodegraph:node:pos = (-294.24554, 112.60765)
+                float2 ui:nodegraph:node:size = (148.5, 199)
+                int ui:nodegraph:node:stackingOrder = 223
+            }
+
+            def Shader "Constant_1"
+            {
+                uniform token info:id = "ND_constant_filename"
+                asset inputs:value = @roughness 1.png@ (
+                    customData = {
+                        dictionary RealityKit = {
+                        }
+                    }
+                )
+                asset outputs:out
+                float2 ui:nodegraph:node:pos = (-533.84515, 56.736317)
+                float2 ui:nodegraph:node:size = (155, 53)
+                int ui:nodegraph:node:stackingOrder = 227
+            }
+        }
+
+        over "mixamorig_Hips" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Root/Root/Material> (
+                bindMaterialAs = "strongerThanDescendants"
+            )
+            float3 xformOp:translate = (-1.0625892, 3.2180305, -1.8626449e-7)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        over "Body_Cube_001" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Root/Root/Material> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+        }
+    }
+}
+

@@ -6,16 +6,8 @@ public let realityKitContentBundle = Bundle.module
 
 
 
-public let sceneName = "Earth.usda"
-public let rootNodeName = "Earth"
-public let panSpeedParameterName = "pan_speed"
-public let minimumCloudOpacityParameterName = "cloud_min_opacity"
-public let maximumCloudOpacityParameterName = "cloud_max_opacity"
-public let lightsMaximuIntensityParameterName = "light_max_intensity"
-
-
-//lighting
-public let sunAngleParameterName = "sun_angle"
+public let sceneName = "Scene.usda"
+public let rootNodeName = "Scene"
 
 
 //useful entity define
