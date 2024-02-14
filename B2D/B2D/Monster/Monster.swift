@@ -18,9 +18,9 @@ struct Monster: View {
             MonsterControls()
                 .offset(y: 0)
         }
-        .onChange(of: model.isMonsterRotating) { _, isRotating in
-            model.monsterShadow.speed = isRotating ? 0.1 : 0
-        }
+//        .onChange(of: model.isMonsterRotating) { _, isRotating in
+//            model.monsterShadow.speed = isRotating ? 0.1 : 0
+//        }
 
     }
 }
