@@ -15,9 +15,10 @@ class ViewModel {
     var isMonsterRotating: Bool = false
     var isShowingView: Bool = false
     var isShowingUs: Bool = false
-    var monsterTilt: GlobeTilt = .none
+    var monsterChange: Singularity = .none
     
     var monsterShadow: MonsterEntity.Configuration = .monsterShadowDefault
+
 
 }
 
