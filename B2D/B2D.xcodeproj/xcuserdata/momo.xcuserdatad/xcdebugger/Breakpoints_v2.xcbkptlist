@@ -64,36 +64,6 @@
             endingLineNumber = "33"
             landmarkName = "body"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "E0B65554-D18A-4F7D-84F4-EDF6E6A25323 - 153c98a9fa41c90b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "B2D.Modules.body.getter : some"
-                  moduleName = "B2D"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/momo/b2db2d.github.io/B2D/B2D/Modules/Modules.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40">
-               </Location>
-               <Location
-                  uuid = "E0B65554-D18A-4F7D-84F4-EDF6E6A25323 - 256e52a5f4e9facd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Array&lt;B2D.Module&gt;, Swift.Array&lt;B2D.Module&gt;) -&gt; () in B2D.Modules.body.getter : some"
-                  moduleName = "B2D"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/momo/b2db2d.github.io/B2D/B2D/Modules/Modules.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -158,36 +128,6 @@
             endingLineNumber = "25"
             landmarkName = "body"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "2879AB86-8D12-427A-BE01-1D6A8DD8E48A - 52f8c0f9cb27ad94"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "B2D.B2DApp.body.getter : some"
-                  moduleName = "B2D"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/momo/b2db2d.github.io/B2D/B2D/B2DApp.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25">
-               </Location>
-               <Location
-                  uuid = "2879AB86-8D12-427A-BE01-1D6A8DD8E48A - 2d3c23007ed30b0c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.environment&lt;&#x3c4;_0_0 where &#x3c4;_1_0: AnyObject, &#x3c4;_1_0: Observation.Observable&gt;(Swift.Optional&lt;&#x3c4;_1_0&gt;) -&gt; some&gt;&gt;.0 in B2D.B2DApp.body.getter : some"
-                  moduleName = "B2D"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/momo/b2db2d.github.io/B2D/B2D/B2DApp.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -1,10 +1,3 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-The model of the Earth.
-*/
-
 import SwiftUI
 import RealityKit
 import RealityKitContent

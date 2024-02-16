@@ -7,6 +7,7 @@ struct Monster: View {
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .controlPanelGuide, vertical: .bottom)) {
             Shadow(
+                //shadowConfiguration 얘가 중요함
                 shadowConfiguration: model.monsterShadow,
                 animateUpdates: true
             )
@@ -18,10 +19,6 @@ struct Monster: View {
             MonsterControls()
                 .offset(y: 0)
         }
-//        .onChange(of: model.isMonsterRotating) { _, isRotating in
-//            model.monsterShadow.speed = isRotating ? 0.1 : 0
-//        }
-
     }
 }
 

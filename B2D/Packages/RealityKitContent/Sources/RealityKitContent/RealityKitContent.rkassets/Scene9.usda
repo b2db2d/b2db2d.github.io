@@ -10,16 +10,22 @@
 
 def Xform "Root" (
     active = true
+    prepend apiSchemas = ["MaterialBindingAPI"]
 )
 {
-    def "Root" (
+    reorder nameChildren = ["Angel_Wings", "material3"]
+    rel material:binding = </Root/material3/Material> (
+        bindMaterialAs = "strongerThanDescendants"
+    )
+
+    def "Angel_Wings" (
         active = true
         prepend apiSchemas = ["MaterialBindingAPI"]
         references = @Angel_Wings.usdz@
     )
     {
-        reorder nameChildren = ["Materials", "Root", "Angel_Wings_T3", "Material", "Transform"]
-        rel material:binding = </Root/Root/Material> (
+        reorder nameChildren = ["Materials", "Root", "Angel_Wings_T3"]
+        rel material:binding = </Root/material3/Material> (
             bindMaterialAs = "strongerThanDescendants"
         )
         quatf xformOp:orient = (1, 0, 0, 0)
@@ -31,16 +37,22 @@ def Xform "Root" (
             prepend apiSchemas = ["MaterialBindingAPI"]
         )
         {
-            rel material:binding = </Root/Root/Materials/Material_26> (
+            rel material:binding = </Root/material3/Material> (
                 bindMaterialAs = "weakerThanDescendants"
             )
+
+            over "Material_26"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
         }
 
         over "Angel_Wings_T3" (
             prepend apiSchemas = ["MaterialBindingAPI"]
         )
         {
-            rel material:binding = </Root/Root/Materials/Material_26> (
+            rel material:binding = </Root/material3/Material> (
                 bindMaterialAs = "weakerThanDescendants"
             )
         }
@@ -49,118 +61,20 @@ def Xform "Root" (
             prepend apiSchemas = ["MaterialBindingAPI"]
         )
         {
-            rel material:binding = </Root/Root/Materials/Material_26> (
-                bindMaterialAs = "strongerThanDescendants"
+            rel material:binding = </Root/material3/Material> (
+                bindMaterialAs = "weakerThanDescendants"
             )
         }
+    }
 
-        def Material "Material"
-        {
-            asset inputs:h = @toppng.com-fractal-glow-bright-texture-abstraction-3840x2400.jpg@ (
-                customData = {
-                    dictionary realitykit = {
-                        float2 positionInSubgraph = (25.367188, -126.39844)
-                        float2 sizeInSubgraph = (115.5, 53)
-                        int stackingOrderInSubgraph = 36
-                    }
-                }
-            )
-            prepend token outputs:mtlx:surface.connect = </Root/Root/Material/PreviewSurface.outputs:out>
-            token outputs:realitykit:vertex
-            float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (299.25, 99.5)
-            float2 ui:nodegraph:realitykit:subgraphOutputs:size = (181.5, 99)
-
-            def Shader "PreviewSurface"
-            {
-                uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
-                color3f inputs:diffuseColor.connect = </Root/Root/Material/Image.outputs:out>
-                float inputs:metallic.connect = </Root/Root/Material/Noise2D_1.outputs:out>
-                float3 inputs:normal
-                float inputs:opacity
-                float inputs:roughness.connect = </Root/Root/Material/Ramplr.outputs:out>
-                token outputs:out
-                float2 ui:nodegraph:node:pos = (98.38281, 133.76172)
-                float2 ui:nodegraph:node:size = (148.5, 199)
-                int ui:nodegraph:node:stackingOrder = 10
-            }
-
-            def Shader "Noise2D"
-            {
-                uniform token info:id = "ND_noise2d_color3"
-                float3 inputs:amplitude.connect = </Root/Root/Material/WorleyNoise2D_1.outputs:out>
-                float inputs:pivot.connect = </Root/Root/Material/Fractal3D.outputs:out>
-                float2 inputs:texcoord
-                color3f outputs:out
-                float2 ui:nodegraph:node:pos = (-146.57812, -159.67969)
-                float2 ui:nodegraph:node:size = (148.5, 145)
-                int ui:nodegraph:node:stackingOrder = 40
-            }
-
-            def Shader "WorleyNoise2D_1"
-            {
-                uniform token info:id = "ND_worleynoise2d_vector3"
-                float inputs:jitter
-                float3 outputs:out
-                float2 ui:nodegraph:node:pos = (-333.01953, -31.230469)
-                float2 ui:nodegraph:node:size = (159.5, 127)
-                int ui:nodegraph:node:stackingOrder = 15
-            }
-
-            def Shader "Fractal3D"
-            {
-                uniform token info:id = "ND_fractal3d_float"
-                float outputs:out
-                float2 ui:nodegraph:node:pos = (-492.91016, 15.972656)
-                float2 ui:nodegraph:node:size = (130.5, 181)
-                int ui:nodegraph:node:stackingOrder = 18
-            }
-
-            def Shader "Ramplr"
-            {
-                uniform token info:id = "ND_ramplr_float"
-                float outputs:out
-                float2 ui:nodegraph:node:pos = (-141.05469, 16.765625)
-                float2 ui:nodegraph:node:size = (148.5, 145)
-                int ui:nodegraph:node:stackingOrder = 42
-            }
-
-            def Shader "Noise2D_1"
-            {
-                uniform token info:id = "ND_noise2d_float"
-                float inputs:amplitude.connect = </Root/Root/Material/WorleyNoise2D.outputs:out>
-                float inputs:pivot
-                float2 inputs:texcoord
-                float outputs:out
-                float2 ui:nodegraph:node:pos = (-109.28125, 184.35938)
-                float2 ui:nodegraph:node:size = (148.5, 145)
-                int ui:nodegraph:node:stackingOrder = 28
-            }
-
-            def Shader "WorleyNoise2D"
-            {
-                uniform token info:id = "ND_worleynoise2d_float"
-                float inputs:jitter = 5
-                float outputs:out
-                float2 ui:nodegraph:node:pos = (-284, 180.375)
-                float2 ui:nodegraph:node:size = (148.5, 127)
-                int ui:nodegraph:node:stackingOrder = 29
-            }
-
-            def Shader "Image"
-            {
-                uniform token info:id = "ND_image_color3"
-                color3f inputs:default.connect = </Root/Root/Material/Noise2D.outputs:out>
-                prepend asset inputs:file.connect = </Root/Root/Material.inputs:h>
-                string inputs:filtertype
-                float2 inputs:texcoord
-                string inputs:uaddressmode
-                string inputs:vaddressmode
-                color3f outputs:out
-                float2 ui:nodegraph:node:pos = (202.47656, -79.24609)
-                float2 ui:nodegraph:node:size = (148.5, 199)
-                int ui:nodegraph:node:stackingOrder = 34
-            }
-        }
+    def "material3" (
+        active = true
+        references = @material3.usda@
+    )
+    {
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (0.02, 0.02, 0.02)
+        float3 xformOp:translate = (0, 0, 0)
     }
 }
 
