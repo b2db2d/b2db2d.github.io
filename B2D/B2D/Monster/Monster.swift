@@ -3,7 +3,8 @@ import SwiftUI
 
 struct Monster: View {
     @Environment(ViewModel.self) private var model
-
+    @State private var monsterControls: MonsterControls?
+    
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .controlPanelGuide, vertical: .bottom)) {
             Shadow(
@@ -15,9 +16,9 @@ struct Monster: View {
             .alignmentGuide(.controlPanelGuide) { context in
                 context[HorizontalAlignment.center]
             }
-
-            MonsterControls()
-                .offset(y: 0)
+        }
+        .onAppear{
+            self.monsterControls = MonsterControls(model: model)
         }
     }
 }
