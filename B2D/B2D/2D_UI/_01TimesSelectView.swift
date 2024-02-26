@@ -23,6 +23,7 @@ struct SelectList: View {
                     self.nextUI = true
                 }) {
                     Text("1 minuate")
+                        .padding(20)
                 }
                 
                 Button(action: {
@@ -30,6 +31,7 @@ struct SelectList: View {
                     self.nextUI = true
                 }) {
                     Text("2 hours")
+                        .padding(20)
                 }
                 
                 Button(action: {
@@ -37,7 +39,9 @@ struct SelectList: View {
                     self.nextUI = true
                 }) {
                     Text("1 day")
+                        .padding(20)
                 }
+                
             }
         }
         .sheet(isPresented: $nextUI) {

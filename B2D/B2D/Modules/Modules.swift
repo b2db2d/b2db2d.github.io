@@ -20,8 +20,8 @@ struct Modules: View {
             NavigationStack(path: $model.navigationPath) {
                 TableOfContents()
                     .navigationDestination(for: Module.self) { module in
-                        ModuleDetail(module: module)
-                            .navigationTitle(module.eyebrow)
+//                        ModuleDetail(module: module)
+//                            .navigationTitle(module.eyebrow)
                     }
             }
             .opacity(model.isShowingUs ? 0 : 1)

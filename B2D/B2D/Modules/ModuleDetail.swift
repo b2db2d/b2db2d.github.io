@@ -27,9 +27,9 @@ struct ModuleDetail: View {
                             .padding(.bottom, 15)
                             .accessibilitySortPriority(4)
 
-                        Text(module.overview)
-                            .padding(.bottom, 30)
-                            .accessibilitySortPriority(3)
+//                        Text(module.overview)
+//                            .padding(.bottom, 30)
+//                            .accessibilitySortPriority(3)
 
                         switch module {
                         case .monster:

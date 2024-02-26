@@ -14,14 +14,14 @@ struct ModuleCard: View {
     var body: some View {
         NavigationLink(value: module) {
             VStack(alignment: .center, spacing: 4) {
-                Text(module.eyebrow)
-                    .font(.callout)
-                    .bold()
-                    .foregroundStyle(.secondary)
+//                Text(module.eyebrow)
+//                    .font(.callout)
+//                    .bold()
+//                    .foregroundStyle(.secondary)
                 VStack(alignment: .center, spacing: 10) {
                     Text(module.heading)
                         .font(.largeTitle)
-                    Text(module.abstract)
+                    //Text(module.abstract)
                 }
             }
             .padding(.vertical, 30)

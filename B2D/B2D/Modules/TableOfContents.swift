@@ -34,9 +34,9 @@ struct TableOfContents: View {
                                 .animation(.easeIn(duration: 3), value: model.titleText)
                                 .opacity(model.isTitleFinished ? 1 : 0)
                         }
-                    Text("Explore the unique advantages of utilizing an AR app for time management")
-                        .font(.subheadline)
-                        .opacity(model.isTitleFinished ? 1 : 0)
+//                    Text("Explore the unique advantages of utilizing an AR app for time management")
+//                        .font(.subheadline)
+//                        .opacity(model.isTitleFinished ? 1 : 0)
                 }
                 .alignmentGuide(.shadowGuide) { context in
                     context[VerticalAlignment.top]
