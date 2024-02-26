@@ -12,29 +12,31 @@ import SwiftUI
 
 struct SelectList: View {
     @State var nextUI = false
+    @Environment(ViewModel.self) private var model
+
     var body: some View {
         VStack {
             Text("Select your Time").padding()
             HStack {
                 Button(action: {
-                    ModelData().inputTime = 5
+                    model.inputTime = 60
                     self.nextUI = true
                 }) {
-                    Text("5 hours")
+                    Text("1 minuate")
                 }
                 
                 Button(action: {
-                    ModelData().inputTime = 24
+                    model.inputTime = 7200
+                    self.nextUI = true
+                }) {
+                    Text("2 hours")
+                }
+                
+                Button(action: {
+                    model.inputTime = 86400
                     self.nextUI = true
                 }) {
                     Text("1 day")
-                }
-                
-                Button(action: {
-                    ModelData().inputTime = 501
-                    self.nextUI = true
-                }) {
-                    Text("1 month")
                 }
             }
         }
