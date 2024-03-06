@@ -30,12 +30,10 @@ struct B2DApp: App {
             OurStory()
                 .environment(model)
         }
-
-        WindowGroup(id: Module.monster.name) {
+        ImmersiveSpace(id: Module.monster.name) {
             Monster()
                 .environment(model)
         }
-        .windowStyle(.volumetric)
         .defaultSize(width: 0.6, height: 0.6, depth: 0.6, in: .meters)
 
     

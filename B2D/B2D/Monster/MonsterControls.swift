@@ -28,7 +28,6 @@ class MonsterControls {
             self.change = change?.next()
             if let change = self.change {
                 self.model.monsterChange = change
-                print("@@@@@" , change)
                 self.model.monsterShadow.date = change.date
                 Task {
                     if self.monsterEntity == nil {
@@ -39,6 +38,7 @@ class MonsterControls {
             } else {
                 self.timer?.invalidate()
                 self.timer = nil
+                self.model.isShowingModule = false
             }
             
         }
