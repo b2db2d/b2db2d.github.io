@@ -1,15 +1,16 @@
+
 import SwiftUI
 import RealityKit
 import RealityKitContent
 
-struct Shadow: View {
+struct MonsterView: View {    
     @Environment(ViewModel.self) private var model
     var shadowConfiguration: MonsterEntity.Configuration = .init()
     var animateUpdates: Bool = false
-
+    
     /// The entity that the view creates and stores for later updates.
     @State private var monsterEntity: MonsterEntity?
-
+    
     var body: some View {
         RealityView { content in
             let contentCopy = content
@@ -18,9 +19,8 @@ struct Shadow: View {
                     configuration: shadowConfiguration,
                     monster: model.myMonster
                 )
+                
                 contentCopy.add(monsterEntity)
-                playIdleAnimation(for: monsterEntity)
-                // Store for later updates.
                 self.monsterEntity = monsterEntity
             }
         } update: { content in
@@ -33,16 +33,10 @@ struct Shadow: View {
             }
         }
     }
-
-    @MainActor
-    func playIdleAnimation(for entity: MonsterEntity) {
-        entity.playAnimation(entity.availableAnimations[0].repeat(), transitionDuration: 0.5, startsPaused: false)
-    }
 }
 
-
-
-#Preview {
-    Shadow(
-    )
-}
+//#Preview {
+//    let monster = ModelData().monster["shadow"]
+//    return MonsterView(monster:monster, index:0).environment(ModelData()).environment(ViewModel())
+//
+//}

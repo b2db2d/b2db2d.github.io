@@ -8,12 +8,15 @@
 import Foundation
 import SwiftUI
 
-struct Creature: Hashable, Codable, Identifiable {
+struct MonsterData: Hashable, Codable, Identifiable {
     var id:Int
     var name:String
     
-    var imageName: String
+    var image_name: String
     var image: Image {
-        Image(imageName)
+        Image(image_name)
     }
+    
+    var usdz_list : [String]
+
 }

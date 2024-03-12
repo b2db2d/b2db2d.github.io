@@ -12,6 +12,7 @@ struct MonsterToggle: View {
     @Environment(ViewModel.self) private var model
     @Environment(\.openImmersiveSpace) var openImmersiveSpace
     @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
+    @State var monster:MonsterData
     
     var body: some View {
         @Bindable var model = model
@@ -20,7 +21,8 @@ struct MonsterToggle: View {
             .onChange(of: model.isShowingModule) { _, isShowing in
                 if isShowing {
                     Task{
-                        await openImmersiveSpace(id:  Module.monster.name)
+                        model.myMonster = monster
+                        await openImmersiveSpace(id: Module.monster.name)
                     }
                 } else {
                     Task{
@@ -32,7 +34,7 @@ struct MonsterToggle: View {
     }
 }
 
-#Preview {
-    MonsterToggle()
-        .environment(ViewModel())
-}
+//#Preview {
+//    MonsterToggle()
+//        .environment(ViewModel())
+//}

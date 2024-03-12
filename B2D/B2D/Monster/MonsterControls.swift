@@ -14,8 +14,10 @@ class MonsterControls {
     
     init(model:ViewModel){
         self.model = model
-        self.timer?.invalidate()
-        
+        birth()
+    }
+    
+    func birth(){
         guard
             model.inputTime.truncatingRemainder(dividingBy: 4) == 0 else{
             // 초 단위는 없을 것 같아서 여길 들어올 일은 없을 거라 생각해서 일단 지금은 이렇게 사용하는 것으로..
@@ -36,12 +38,16 @@ class MonsterControls {
                     await self.monsterEntity?.changeFunc(date: change.date)
                 }
             } else {
-                self.timer?.invalidate()
-                self.timer = nil
-                self.model.isShowingModule = false
+                death()
             }
             
         }
+    }
+    
+    func death(){
+        self.timer?.invalidate()
+        self.timer = nil
+        self.model.isShowingModule = false
     }
     
 }

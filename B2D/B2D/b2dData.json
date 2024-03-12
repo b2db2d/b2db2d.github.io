@@ -1,16 +1,16 @@
 [
     {
         "id": 0,
-        "name":"",
-        "imageName" : "egg01"
-    },{
+        "name":"shadow",
+        "image_name" : "egg01",
+        "usdz_list" : ["Scene2", "Scene3", "Scene6", "Scene10"]
+    },
+    
+    {
         "id": 1,
-        "name":"",
-        "imageName" : "egg02"
-    },{
-        "id": 2,
-        "name":"",
-        "imageName" : "egg03"
+        "name":"dragon",
+        "image_name" : "egg02",
+        "usdz_list" : ["Dragon1_idle", "Dragon2_idle", "Dragon3_idle", "Dragon3_die"]
+
     }
 ]
- 
