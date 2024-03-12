@@ -48,7 +48,7 @@ struct CreatureListView: View {
                     }
                 }
                 
-                MonsterToggle(monster: modelData.monsters[id])
+                MonsterToggle(monster: $modelData.monsters[id])
             }
         }
         .animation(.default, value: model.isShowingUs)

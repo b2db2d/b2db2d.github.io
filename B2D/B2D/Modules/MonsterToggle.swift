@@ -12,7 +12,7 @@ struct MonsterToggle: View {
     @Environment(ViewModel.self) private var model
     @Environment(\.openImmersiveSpace) var openImmersiveSpace
     @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
-    @State var monster:MonsterData
+    @Binding var monster:MonsterData
     
     var body: some View {
         @Bindable var model = model
