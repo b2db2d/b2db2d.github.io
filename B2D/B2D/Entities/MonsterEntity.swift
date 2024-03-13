@@ -49,11 +49,12 @@ class MonsterEntity: Entity {
         _ = calendar.component(.month, from: date ?? Date())
         
         do {
-            index += 1
-//            guard let usdzList = monster?.usdz_list, index < usdzList.count else {
-//                print("Error: Index out of bounds or usdz_list is nil")
-//                return
-//            }
+            //index += 1
+           
+            guard let usdzList = monster?.usdz_list, index < usdzList.count else {
+                print("Error: Index out of bounds or usdz_list is nil")
+                return
+            }
             
             guard let monsterName = monster?.usdz_list[index] else {
                 print("Error: \(monster), \(monster?.usdz_list[index])")
@@ -68,7 +69,7 @@ class MonsterEntity: Entity {
             if let animationKey = self.entity?.availableAnimations.first {
                 self.entity?.playAnimation(animationKey.repeat(), transitionDuration: 0.3, startsPaused: false)
             }
-            //self.index += 1
+            index += 1
             //print(monster?.usdz_list[index] ?? "out of range")
             
         } catch {
