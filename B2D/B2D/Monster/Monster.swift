@@ -6,12 +6,11 @@ struct Monster: View {
 
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .controlPanelGuide, vertical: .bottom)) {
-            Shadow(
+            MonsterView(
                 //shadowConfiguration 얘가 중요함
                 shadowConfiguration: model.monsterShadow,
                 animateUpdates: true
-            )
-      
+            ).environment(model)
             .alignmentGuide(.controlPanelGuide) { context in
                 context[HorizontalAlignment.center]
             }

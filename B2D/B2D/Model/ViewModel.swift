@@ -1,5 +1,6 @@
 
 import SwiftUI
+import RealityKit
 
 @Observable
 class ViewModel {
@@ -10,6 +11,7 @@ class ViewModel {
     var isTitleFinished: Bool = false
     var finalTitle: String = "Birth to Death"
 
+    var myMonster:MonsterData? = nil
     // MARK: - Monster
     var isShowingModule: Bool = false
     var isMonsterRotating: Bool = false

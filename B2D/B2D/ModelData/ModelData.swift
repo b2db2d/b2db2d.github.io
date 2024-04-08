@@ -8,12 +8,9 @@
 import Foundation
 
 @Observable
-class ModelData{
-    var creatures: [Creature] = load("b2dData.json")
-    // not sure if here is right 
-    var inputTime:Int = 0
+class ModelData{    
+    var monsters: [MonsterData] = load("b2dData.json")
 }
-
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

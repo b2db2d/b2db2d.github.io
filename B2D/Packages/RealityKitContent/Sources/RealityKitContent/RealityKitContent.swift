@@ -2,9 +2,9 @@ import Foundation
 import RealityKit
 
 /// Bundle for the RealityKitContent project
+// TODO: change package name!
+
 public let realityKitContentBundle = Bundle.module
-
-
 
 public let sceneName = "Scene.usda"
 public let rootNodeName = "Scene"
