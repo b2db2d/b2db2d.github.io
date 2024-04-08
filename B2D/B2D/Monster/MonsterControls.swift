@@ -1,10 +1,9 @@
 import SwiftUI
 
-@Observable
-class MonsterControls {
-    private var model: ViewModel
-    private var isPickerVisible: Bool = false
-    
+struct MonsterControls: View {
+    @Environment(ViewModel.self) private var model
+    @State private var isPickerVisible: Bool = false
+
     // MonsterEntity 클래스의 인스턴스를 옵셔널로 선언
     private var monsterEntity: MonsterEntity?
     
@@ -40,18 +39,15 @@ class MonsterControls {
             } else {
                 death()
             }
-            
         }
     }
-    
+  
     func death(){
         self.timer?.invalidate()
         self.timer = nil
         self.model.isShowingModule = false
     }
-    
-}
-
+} 
 
 // 새롭게 넣은 Singularity 변수입니다.
 // https://github.com/b2db2d/b2db2d.github.io/issues/13#issue-2128056804
@@ -59,7 +55,7 @@ class MonsterControls {
 enum Singularity: String, CaseIterable, Identifiable {
     case none, march, june, september
     var id: Self { self }
-    
+
     var date: Date? {
         let month = switch self {
         case .none: 2
@@ -67,14 +63,14 @@ enum Singularity: String, CaseIterable, Identifiable {
         case .june: 6
         case .september: 10
         }
-        
+
         if month == 0 {
             return nil
         } else {
             return Calendar.autoupdatingCurrent.date(from: .init(month: month, day: 21))
         }
     }
-    
+  
     func next() -> Singularity? {
         let allCases = Singularity.allCases
         let currentIndex = allCases.firstIndex(of: self)!
@@ -85,6 +81,4 @@ enum Singularity: String, CaseIterable, Identifiable {
         } else {
             return allCases[nextIndex]
         }
-    }
 }
-

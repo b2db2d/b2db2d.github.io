@@ -21,9 +21,6 @@ class ViewModel {
     
     var monsterShadow: MonsterEntity.Configuration = .monsterShadowDefault
 
-    // ModelData 에 있던 inputTime 을 여기로 옮겼음
-    // 단위는 초단위
-    var inputTime:Double = 0
 
 }
 
