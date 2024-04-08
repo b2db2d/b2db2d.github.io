@@ -77,7 +77,7 @@
 		FA5F211D2B5FF1AA00209FC9 /* shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = shader.metal; sourceTree = "<group>"; };
 		FA5F211F2B6001AF00209FC9 /* AnimatedBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedBackground.swift; sourceTree = "<group>"; };
 		FAD0C4A52B67729C0052502C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		FAD0C4A82B6773140052502C /* MonsterEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterEntity.swift; sourceTree = "<group>"; };
+		FAD0C4A82B6773140052502C /* MonsterEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterEntity.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		FAD0C4AB2B67749B0052502C /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		FAD0C4AC2B6775460052502C /* Entity+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entity+Configuration.swift"; sourceTree = "<group>"; };
 		FAD0C4B52B677D7D0052502C /* MonsterControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterControls.swift; sourceTree = "<group>"; };
