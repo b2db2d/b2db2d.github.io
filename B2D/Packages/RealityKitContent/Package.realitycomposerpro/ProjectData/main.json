@@ -1,5 +1,10 @@
 {
   "pathsToIds" : {
-    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/Scene.usda" : "445B95F7-818A-4193-8551-A63009216850"
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/Dragon1_idle.usda" : "3D8C4E2E-B1FB-4759-B305-4A931192642B",
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/Dragon2_idle.usda" : "32529D69-EBC3-4148-BAA2-004DE500A433",
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/Dragon3_die.usda" : "6AC47CAD-1E91-471E-9E39-A32273C3CAC1",
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/Dragon3_idle.usda" : "8709B6A0-74EA-4401-8ACF-B3236764D90F",
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/Scene.usda" : "445B95F7-818A-4193-8551-A63009216850",
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/Scene2.usda" : "CB461A3B-F3CC-4C7D-B8F8-DEEE16E7913F"
   }
 }

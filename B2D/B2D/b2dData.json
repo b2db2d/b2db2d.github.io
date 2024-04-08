@@ -1,12 +1,5 @@
 [
     {
-        "id": 0,
-        "name":"shadow",
-        "image_name" : "egg01",
-        "usdz_list" : ["Scene2", "Scene3", "Scene6", "Scene10"]
-    },
-    
-    {
         "id": 1,
         "name":"dragon",
         "image_name" : "egg02",
