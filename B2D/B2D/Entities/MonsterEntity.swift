@@ -3,36 +3,37 @@ import SwiftUI
 import RealityKitContent
 
 class MonsterEntity: Entity {
-
-    private var monster: Entity = Entity()
-
+    private var entity: Entity? = Entity()
+    var index: Int = 0
+    var monster:MonsterData? = nil
+    
     @MainActor required init() {
         super.init()
     }
-
+    
     init(
-        configuration: Configuration
-
+        configuration: Configuration,
+        monster: MonsterData?
+        
     ) async {
         super.init()
-
-        guard let monster = await RealityKitContent.entity(named: "Scene2") else { return }
         self.monster = monster
-
-        self.addChild(monster)
-
+        
+        guard let entity = await RealityKitContent.entity(named: monster?.usdz_list[0] ?? "Scene9") else { return }
+        self.entity = entity
+        self.addChild(entity)
         await update(
             configuration: configuration,
             animateUpdates: false)
     }
-
+    
     @MainActor func update(
         configuration: Configuration,
         animateUpdates: Bool
     ) async {
         // Call the change function
         await changeFunc(date: configuration.date)
-
+        
         // Scale and position the entire entity.
         move(
             to: Transform(
@@ -40,26 +41,46 @@ class MonsterEntity: Entity {
                 rotation: orientation,
                 translation: configuration.position),
             relativeTo: parent)
-
+        
     }
-
+    
     @MainActor public func changeFunc(date: Date?) async {
-        // Extract the month from the date
         let calendar = Calendar.autoupdatingCurrent
-        let month = calendar.component(.month, from: date ?? Date())
-
-        // Load a new 3D model based on the month
-        let modelName = "Scene\(month)"
-        guard let newMonster = await RealityKitContent.entity(named: modelName) else { return }
-
-        // Remove the old monster from its parent
-        monster.removeFromParent()
-
-        // Assign the new monster to the monster property
-        self.monster = newMonster
-
-        // Add the new monster to the entity
-        addChild(monster)
+        _ = calendar.component(.month, from: date ?? Date())
+        
+        do {
+            guard let usdzList = monster?.usdz_list, index < usdzList.count else {
+                print("Error: Index out of bounds or usdz_list is nil")
+                return
+            }
+            
+            guard let monsterName = monster?.usdz_list[index] else {
+                print("Error: \(monster), \(monster?.usdz_list[index])")
+                return
+            }
+            let newMonster = await RealityKitContent.entity(named: monsterName)
+            
+            self.entity?.removeFromParent()
+            self.entity = newMonster
+            addChild(self.entity!)
+            
+            if index+1 != monster?.usdz_list.count
+            {
+                if let animationKey = self.entity?.availableAnimations.first {
+                    self.entity?.playAnimation(animationKey.repeat(), transitionDuration: 0.3, startsPaused: false)
+                }
+            }
+            else{
+                if let animationKey = self.entity?.availableAnimations.first {
+                    self.entity?.playAnimation(animationKey , transitionDuration: 0.3, startsPaused: false)
+                }
+            }
+            index += 1
+            //print(monster?.usdz_list[index] ?? "out of range")
+            
+        } catch {
+            print("Error: \(monster?.usdz_list[index]) is not exist")
+        }
     }
-
 }
+

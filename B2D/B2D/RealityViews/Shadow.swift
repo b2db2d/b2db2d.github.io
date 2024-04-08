@@ -3,6 +3,7 @@ import RealityKit
 import RealityKitContent
 
 struct Shadow: View {
+    @Environment(ViewModel.self) private var model
     var shadowConfiguration: MonsterEntity.Configuration = .init()
     var animateUpdates: Bool = false
 
@@ -14,7 +15,8 @@ struct Shadow: View {
             let contentCopy = content
             Task {
                 let monsterEntity = await MonsterEntity(
-                    configuration: shadowConfiguration
+                    configuration: shadowConfiguration,
+                    monster: model.myMonster
                 )
                 contentCopy.add(monsterEntity)
                 playIdleAnimation(for: monsterEntity)

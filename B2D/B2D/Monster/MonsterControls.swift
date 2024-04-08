@@ -1,10 +1,9 @@
 import SwiftUI
 
-@Observable
-class MonsterControls {
-    private var model: ViewModel
-    private var isPickerVisible: Bool = false
-    
+struct MonsterControls: View {
+    @Environment(ViewModel.self) private var model
+    @State private var isPickerVisible: Bool = false
+
     // MonsterEntity 클래스의 인스턴스를 옵셔널로 선언
     private var monsterEntity: MonsterEntity?
     
@@ -14,8 +13,10 @@ class MonsterControls {
     
     init(model:ViewModel){
         self.model = model
-        self.timer?.invalidate()
-        
+        birth()
+    }
+    
+    func birth(){
         guard
             model.inputTime.truncatingRemainder(dividingBy: 4) == 0 else{
             // 초 단위는 없을 것 같아서 여길 들어올 일은 없을 거라 생각해서 일단 지금은 이렇게 사용하는 것으로..
@@ -36,16 +37,17 @@ class MonsterControls {
                     await self.monsterEntity?.changeFunc(date: change.date)
                 }
             } else {
-                self.timer?.invalidate()
-                self.timer = nil
-                self.model.isShowingModule = false
+                death()
             }
-            
         }
     }
-    
-}
-
+  
+    func death(){
+        self.timer?.invalidate()
+        self.timer = nil
+        self.model.isShowingModule = false
+    }
+} 
 
 // 새롭게 넣은 Singularity 변수입니다.
 // https://github.com/b2db2d/b2db2d.github.io/issues/13#issue-2128056804
@@ -53,7 +55,7 @@ class MonsterControls {
 enum Singularity: String, CaseIterable, Identifiable {
     case none, march, june, september
     var id: Self { self }
-    
+
     var date: Date? {
         let month = switch self {
         case .none: 2
@@ -61,14 +63,14 @@ enum Singularity: String, CaseIterable, Identifiable {
         case .june: 6
         case .september: 10
         }
-        
+
         if month == 0 {
             return nil
         } else {
             return Calendar.autoupdatingCurrent.date(from: .init(month: month, day: 21))
         }
     }
-    
+  
     func next() -> Singularity? {
         let allCases = Singularity.allCases
         let currentIndex = allCases.firstIndex(of: self)!
@@ -79,6 +81,4 @@ enum Singularity: String, CaseIterable, Identifiable {
         } else {
             return allCases[nextIndex]
         }
-    }
 }
-
