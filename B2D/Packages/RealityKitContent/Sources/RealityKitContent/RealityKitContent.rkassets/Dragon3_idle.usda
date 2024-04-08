@@ -15,7 +15,7 @@ def Xform "Root"
         prepend references = @dragon3_idle.usdz@
     )
     {
-        float3 xformOp:scale = (0.002, 0.002, 0.002)
+        float3 xformOp:scale = (0.001, 0.001, 0.001)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 }

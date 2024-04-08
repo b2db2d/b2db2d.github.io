@@ -12,6 +12,50 @@
   "sceneCameraHistory" : {
     "3D8C4E2E-B1FB-4759-B305-4A931192642B" : [
       {
+        "date" : 734259002.208113,
+        "title" : "Untitled",
+        "transform" : [
+          0.99999994,
+          0,
+          0,
+          0,
+          0,
+          0.8660254,
+          -0.49999994,
+          0,
+          0,
+          0.49999994,
+          0.8660254,
+          0,
+          0,
+          0.2086819,
+          0.36144787,
+          1
+        ]
+      },
+      {
+        "date" : 734258996.296618,
+        "title" : "Untitled",
+        "transform" : [
+          0.99999994,
+          0,
+          0,
+          0,
+          0,
+          0.8660254,
+          -0.49999994,
+          0,
+          0,
+          0.49999994,
+          0.8660254,
+          0,
+          0,
+          0.021775398,
+          0.037716117,
+          1
+        ]
+      },
+      {
         "date" : 734258374.321869,
         "title" : "Untitled",
         "transform" : [
@@ -263,5 +307,5 @@
       }
     ]
   },
-  "selectedSceneRelativePath" : "Dragon1_idle.usda"
+  "selectedSceneRelativePath" : "Dragon3_die.usda"
 }
