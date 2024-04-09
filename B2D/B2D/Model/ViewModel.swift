@@ -21,7 +21,8 @@ class ViewModel {
     
     var monsterShadow: MonsterEntity.Configuration = .monsterShadowDefault
 
-
+    // 단위는 초단위
+    var inputTime:Double = 0
 }
 
 
