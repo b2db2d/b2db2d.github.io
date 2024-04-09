@@ -42,13 +42,18 @@ class MonsterControls {
             }
         }
     }
-  
+    
     func death(){
         self.timer?.invalidate()
         self.timer = nil
+        // 죽음 에니메이션 끝나자마자 사라지게 하려면 필요함. 지금은 에니메이션이 부족해서 그냥 타이머 시간이 지나면 사라짐. ( 사용하려면 next()에서 - 1 을 추가해야 함.) 
+//        let deathAnimationPlayTime = self.monsterEntity?.animation?.duration ?? 3
+//        DispatchQueue.main.asyncAfter(deadline: .now() + deathAnimationPlayTime){
+//            self.model.isShowingModule = false
+//        }
         self.model.isShowingModule = false
     }
-} 
+}
 
 // 새롭게 넣은 Singularity 변수입니다.
 // https://github.com/b2db2d/b2db2d.github.io/issues/13#issue-2128056804
