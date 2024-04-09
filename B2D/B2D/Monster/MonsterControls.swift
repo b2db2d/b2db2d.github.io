@@ -1,8 +1,9 @@
 import SwiftUI
 
-struct MonsterControls: View {
-    @Environment(ViewModel.self) private var model
-    @State private var isPickerVisible: Bool = false
+@Observable
+class MonsterControls {
+    private var model: ViewModel
+    private var isPickerVisible: Bool = false
 
     // MonsterEntity 클래스의 인스턴스를 옵셔널로 선언
     private var monsterEntity: MonsterEntity?
@@ -81,4 +82,5 @@ enum Singularity: String, CaseIterable, Identifiable {
         } else {
             return allCases[nextIndex]
         }
+    }
 }
