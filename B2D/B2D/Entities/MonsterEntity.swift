@@ -58,29 +58,85 @@ class MonsterEntity: Entity {
                 print("Error: \(monster), \(monster?.usdz_list[index])")
                 return
             }
-            let newMonster = await RealityKitContent.entity(named: monsterName)
+            guard let newMonster = await RealityKitContent.entity(named: monsterName)else {
+                print("Error: failed load next monster \(monsterName)")
+                return
+            }
             
-            self.entity?.removeFromParent()
-            self.entity = newMonster
-            addChild(self.entity!)
+            //setOpacity(entity: newMonster, opacity: 0)
+            addChild(newMonster)
             
             if index+1 != monster?.usdz_list.count
             {
-                if let animationKey = self.entity?.availableAnimations.first {
-                    self.entity?.playAnimation(animationKey.repeat(), transitionDuration: 0.3, startsPaused: false)
+                if let animationKey = newMonster.availableAnimations.first {
+                    newMonster.playAnimation(animationKey.repeat(), transitionDuration: 0.3, startsPaused: false)
                 }
             }
             else{
-                if let animationKey = self.entity?.availableAnimations.first {
-                    self.entity?.playAnimation(animationKey , transitionDuration: 0.3, startsPaused: false)
+                if let animationKey = newMonster.availableAnimations.first {
+                    newMonster.playAnimation(animationKey , transitionDuration: 0.3, startsPaused: false)
                 }
             }
+            
+            let fadeTime = 0.3
+            guard let curEntity = self.entity else { return }
+           // self.fadeIn(entity: self.entity!, duration: fadeTime)
+            //self.entity?.fadeOut(duration: fadeTime, targetOpacity: 0)
+            //DispatchQueue.main.asyncAfter(deadline: .now() + fadeTime){
+                
+            //}
+           // self.fadeOut(entity: newMonster, duration: fadeTime)
+            //newMonster.fadeIn(duration: fadeTime, targetOpacity: 1)
+           // DispatchQueue.main.asyncAfter(deadline: .now() + fadeTime){
+                self.entity?.removeFromParent()
+                self.entity = newMonster
+            //}
+            
             index += 1
-            //print(monster?.usdz_list[index] ?? "out of range")
             
         } catch {
             print("Error: \(monster?.usdz_list[index]) is not exist")
         }
+    }
+    
+    // Entity Fade in / out
+    func setOpacity(entity: Entity, opacity: Float) {
+        if let modelComponent = entity.components[ModelComponent.self] {
+            var newMaterials: [RealityKit.Material] = []
+            for material in modelComponent.materials {
+                var newMaterial = material
+                switch newMaterial {
+                case var simpleMaterial as SimpleMaterial:
+                    simpleMaterial.color = .init(tint: UIColor(white: 1.0, alpha: CGFloat(opacity)),texture: .none)
+                    newMaterial = simpleMaterial
+                default:
+                    break
+                }
+                newMaterials.append(newMaterial)
+            }
+            entity.components[ModelComponent.self]?.materials = newMaterials
+        }
+    }
+
+    func fadeIn(entity: Entity, duration: Double){
+        let steps = Int(duration*100)
+           let timeInterval = duration / Double(steps)
+           for step in 1...steps {
+               DispatchQueue.main.asyncAfter(deadline: .now() + timeInterval * Double(step)) {
+                   let opacity = Float(step) / Float(steps)
+                   self.setOpacity(entity: entity, opacity: opacity)
+               }
+           }
+    }
+    func fadeOut(entity: Entity, duration: Double){
+        let steps = Int(duration*100)
+           let timeInterval = duration / Double(steps)
+           for step in 1...steps {
+               DispatchQueue.main.asyncAfter(deadline: .now() + timeInterval * Double(step)) {
+                   let opacity = 1 - Float(step) / Float(steps)
+                   self.setOpacity(entity: entity, opacity: opacity)
+               }
+           }
     }
 }
 

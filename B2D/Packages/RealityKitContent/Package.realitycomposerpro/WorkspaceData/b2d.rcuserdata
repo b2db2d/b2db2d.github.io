@@ -1,5 +1,5 @@
 {
-  "advancedEditorSelectedIdentifier" : "ProjectBrowser",
+  "advancedEditorSelectedIdentifier" : "ShaderGraphEditorPluginID",
   "openSceneRelativePaths" : [
     "Dragon1_idle.usda",
     "Dragon2_idle.usda",
@@ -7,7 +7,9 @@
     "Dragon3_die.usda"
   ],
   "recentIdentifiers" : {
+    "6AC47CAD-1E91-471E-9E39-A32273C3CAC1" : [
 
+    ]
   },
   "sceneCameraHistory" : {
     "3D8C4E2E-B1FB-4759-B305-4A931192642B" : [
@@ -101,6 +103,28 @@
       }
     ],
     "6AC47CAD-1E91-471E-9E39-A32273C3CAC1" : [
+      {
+        "date" : 734368727.267365,
+        "title" : "Untitled",
+        "transform" : [
+          0.99999994,
+          0,
+          0,
+          0,
+          0,
+          0.8660254,
+          -0.49999994,
+          0,
+          0,
+          0.49999994,
+          0.8660254,
+          0,
+          0,
+          0.37854153,
+          0.6556532,
+          1
+        ]
+      },
       {
         "date" : 734258473.068179,
         "title" : "Untitled",
