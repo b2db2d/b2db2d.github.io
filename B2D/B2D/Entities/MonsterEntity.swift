@@ -62,10 +62,7 @@ class MonsterEntity: Entity {
                 print("Error: failed load next monster \(monsterName)")
                 return
             }
-            
-            //setOpacity(entity: newMonster, opacity: 0)
-            addChild(newMonster)
-            
+                        
             if index+1 != monster?.usdz_list.count
             {
                 if let animationKey = newMonster.availableAnimations.first {
@@ -77,21 +74,20 @@ class MonsterEntity: Entity {
                     newMonster.playAnimation(animationKey , transitionDuration: 0.3, startsPaused: false)
                 }
             }
-            
-            let fadeTime = 0.3
+            let fadeTime = 0.5
             guard let curEntity = self.entity else { return }
-           // self.fadeIn(entity: self.entity!, duration: fadeTime)
-            //self.entity?.fadeOut(duration: fadeTime, targetOpacity: 0)
-            //DispatchQueue.main.asyncAfter(deadline: .now() + fadeTime){
+            self.fadeOut(entity: self.entity!, duration: fadeTime)
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + fadeTime){
+                self.setOpacity(entity: newMonster, opacity: 0)
+                self.addChild(newMonster)
                 
-            //}
-           // self.fadeOut(entity: newMonster, duration: fadeTime)
-            //newMonster.fadeIn(duration: fadeTime, targetOpacity: 1)
-           // DispatchQueue.main.asyncAfter(deadline: .now() + fadeTime){
-                self.entity?.removeFromParent()
-                self.entity = newMonster
-            //}
-            
+                self.fadeIn(entity: newMonster, duration: fadeTime)
+                DispatchQueue.main.asyncAfter(deadline: .now() + fadeTime){
+                    curEntity.removeFromParent()
+                    self.entity = newMonster
+                }
+            }
             index += 1
             
         } catch {

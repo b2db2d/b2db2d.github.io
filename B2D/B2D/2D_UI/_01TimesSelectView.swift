@@ -33,10 +33,10 @@ struct SelectList: View {
                 
                 
                 Button(action: {
-                    model.inputTime = 86400
+                    model.inputTime = 20
                     self.nextUI = true
                 }) {
-                    Text("1 day")
+                    Text("test : 20 seconds")
                 }
             }
         }
