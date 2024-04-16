@@ -33,7 +33,7 @@ class MonsterControls {
                 self.model.monsterShadow.date = change.date
                 Task {
                     if self.monsterEntity == nil {
-                        self.monsterEntity = await MonsterEntity()
+                        self.monsterEntity = await MonsterEntity(configuration: .init(), monster: self.model.myMonster)
                     }
                     await self.monsterEntity?.changeFunc(date: change.date)
                 }
