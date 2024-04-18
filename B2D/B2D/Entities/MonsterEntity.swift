@@ -78,7 +78,7 @@ class MonsterEntity: Entity {
                 curEntity.playAnimation(animationKey.repeat(), transitionDuration: 0.3, startsPaused: false)
             }
         } else {
-            self.fadeOut(entity: curEntity, duration: fadeTime)
+            self.fade(entity: curEntity, duration: fadeTime, fadeIn:false)
             
             DispatchQueue.main.asyncAfter(deadline: .now() + fadeTime) {
                 self.setOpacity(entity: newMonster, opacity: 0)
@@ -86,7 +86,7 @@ class MonsterEntity: Entity {
                 if let animationKey = newMonster.availableAnimations.first {
                     newMonster.playAnimation(animationKey, transitionDuration: 0.3, startsPaused: false)
                 }
-                self.fadeIn(entity: newMonster, duration: fadeTime)
+                self.fade(entity: newMonster, duration: fadeTime)
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + fadeTime) {
                     curEntity.removeFromParent()
@@ -108,34 +108,19 @@ class MonsterEntity: Entity {
         //}
     }
     
-    func fadeIn(entity: Entity, duration: Double){
-        let steps = Int(duration*100)
-        let timeInterval = duration / Double(steps)
-        for step in 1...steps {
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + timeInterval * Double(step)) {
-                if step == steps {
-                    self.setOpacity(entity: entity, opacity: 1)
-                    return
-                }
-                let opacity = Float(step) / Float(steps)
-                self.setOpacity(entity: entity, opacity: opacity)
-            }
-        }
-    }
-    func fadeOut(entity: Entity, duration: Double){
-        let steps = Int(duration*100)
-        let timeInterval = duration / Double(steps)
-        for step in 1...steps {
-            DispatchQueue.main.asyncAfter(deadline: .now() + timeInterval * Double(step)) {
-                if step == steps {
-                    self.setOpacity(entity: entity, opacity: 0)
-                    return
-                }
-                let opacity = 1 - Float(step) / Float(steps)
-                self.setOpacity(entity: entity, opacity: opacity)
-            }
-        }
+    func fade(entity: Entity, duration: Double, fadeIn:Bool = true){
+        let steps = Int(duration * 100)
+               let timeInterval = duration / Double(steps)
+               for step in 1...steps {
+                   DispatchQueue.main.asyncAfter(deadline: .now() + timeInterval * Double(step)) {
+                       if step == steps {
+                           self.setOpacity(entity: entity, opacity: fadeIn ? 1 : 0)
+                       } else {
+                           let opacity = fadeIn ? Float(step) / Float(steps) : 1 - Float(step) / Float(steps)
+                           self.setOpacity(entity: entity, opacity: opacity)
+                       }
+                   }
+               }
     }
 }
 
