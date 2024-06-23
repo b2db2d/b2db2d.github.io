@@ -4,7 +4,7 @@ extension MonsterEntity {
     /// Configuration information for Monster entities.
     struct Configuration {
         var scale: Float = 1
-        var position: SIMD3<Float> = .init(x: 0.0, y: -0.8, z: 0)
+        var position: SIMD3<Float> = .init(x: 0, y: 1, z: -0.8)
         var speed: Float = 0
         var isPaused: Bool = false
         var date: Date? = nil
